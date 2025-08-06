@@ -1,7 +1,7 @@
 import { expect, describe, it } from 'vitest';
 
 function right(before) {
-  let after = [];
+  const after: number[] = [];
   if (before[3] !== 0) {
     after.unshift(before[3]);
   }
@@ -9,31 +9,19 @@ function right(before) {
     after.unshift(before[2]);
   }
   if (before[1] !== 0) {
-    after.unshift(before[1]);
+    if (before[1] === after[0]) {
+      after[0] = 2*after[0];
+    }
+    else {
+      after.unshift(before[1]);
+    }
   }
   if (before[0] !== 0) {
     after.unshift(before[0]);
   }
-  if (before[2] == 8) {
-    return after;
+  while (after.length < 4) {
+    after.unshift(0)
   }
-  if (before[0] == 2) {
-    after.unshift(0);
-    after.unshift(0);
-    return after;
-
-  }
-  if (before[2] == 2) {
-    after.unshift(0);
-    after.unshift(0);
-    after.unshift(0);
-    return after;
-
-  }
-
-  after.unshift(0);
-  after.unshift(0);
-  after.unshift(0);
   return after;
 }
 
@@ -56,6 +44,10 @@ describe('2048', () => {
 
   it('should 5', () => {
     expect(right([2,4,8,16])).toEqual([2,4,8,16])
+  });
+
+  it('should 5', () => {
+    expect(right([0,2,0,2])).toEqual([0,0,0,4])
   });
 
 });
