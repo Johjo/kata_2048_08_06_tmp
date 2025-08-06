@@ -3,6 +3,7 @@
 This is a basic template to make a kata using [TypeScript](https://www.typescriptlang.org/) and [Vitest](https://vitest.dev/).
 
 Vu par Jonathan
+Vu par Xavier
 
 ## Prerequisites
 
