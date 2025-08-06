@@ -4,6 +4,7 @@ This is a basic template to make a kata using [TypeScript](https://www.typescrip
 
 Vu par Jonathan
 Vu par Xavier
+Vu par Alexandre
 
 ## Prerequisites
 
