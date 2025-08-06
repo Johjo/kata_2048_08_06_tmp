@@ -1,8 +1,8 @@
 import { expect, describe, it } from 'vitest';
 
 function right(before) {
+  let after = [];
   if (before[0] == 2) {
-    let after = [];
     after.push(0);
     after.push(0);
     after.push(2);
@@ -10,14 +10,12 @@ function right(before) {
     return after;
   }
   if (before[1] == 4) {
-    let after = [];
     after.push(0);
     after.push(0);
     after.push(0);
     after.push(4);
     return after;
   }
-  let after = [];
   after.push(0);
   after.push(0);
   after.push(0);
