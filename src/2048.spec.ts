@@ -2,23 +2,28 @@ import { expect, describe, it } from 'vitest';
 
 function right(before) {
   let after = [];
-  if (before[2] == 8) {
+  if (before[3] !== 0) {
     after.unshift(before[3]);
+  }
+  if (before[2] !== 0) {
     after.unshift(before[2]);
+  }
+  if (before[1] !== 0) {
     after.unshift(before[1]);
+  }
+  if (before[0] !== 0) {
     after.unshift(before[0]);
+  }
+  if (before[2] == 8) {
     return after;
   }
   if (before[0] == 2) {
-    after.unshift(before[1]);
-    after.unshift(before[0]);
     after.unshift(0);
     after.unshift(0);
     return after;
 
   }
   if (before[2] == 2) {
-    after.unshift(before[2]);
     after.unshift(0);
     after.unshift(0);
     after.unshift(0);
@@ -26,7 +31,6 @@ function right(before) {
 
   }
 
-  after.unshift(before[1]);
   after.unshift(0);
   after.unshift(0);
   after.unshift(0);
